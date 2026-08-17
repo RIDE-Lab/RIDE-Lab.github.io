@@ -3,33 +3,93 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="RIDE Lab develops agent-native systems and stewards the shared SAGE core.">
+  <meta name="description" content="RIDE Lab advances agent-native systems and serves as principal engineering steward of the shared SAGE core.">
+  <meta name="theme-color" content="#0a0f10">
   <link rel="canonical" href="https://ride-lab.github.io/">
-  <title>RIDE Lab</title>
-  <style>
-    :root { color-scheme: light dark; font-family: ui-sans-serif, system-ui, sans-serif; }
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; }
-    main { width: min(42rem, calc(100% - 3rem)); }
-    h1 { font-size: clamp(3rem, 10vw, 6rem); margin: 0 0 1rem; letter-spacing: -0.06em; }
-    p { font-size: 1.15rem; line-height: 1.65; }
-    nav { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
-    a { color: inherit; font-weight: 650; }
-  </style>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="RIDE Lab | Agent-Native Systems">
+  <meta property="og:description" content="Research Initiative for Delegated Execution—agent-native systems and stewardship of the shared SAGE core.">
+  <meta property="og:url" content="https://ride-lab.github.io/">
+  <title>RIDE Lab | Agent-Native Systems</title>
+  <link rel="icon" href="./assets/ride-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/site.css?v=ride-portal-20260817">
 </head>
 <body>
-  <main>
-    <h1>RIDE Lab</h1>
-    <p>Agent-native systems research and stewardship of the shared SAGE core.</p>
-    <p>
-      SAGE — Streaming-Augmented Generative Execution — is the IntelliStream
-      research ecosystem's shared flagship product. RIDE Lab is its principal
-      engineering steward, not its exclusive owner.
-    </p>
-    <nav aria-label="RIDE Lab links">
-      <a href="https://github.com/RIDE-Lab">GitHub organization</a>
-      <a href="https://sage.org.ai/">SAGE product</a>
-      <a href="https://github.com/vllm-hust">vLLM-HUST</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="RIDE Lab home"><span class="brand-mark">R</span><span class="brand-copy">RIDE Lab<small data-en="Agent-native systems" data-zh="智能体原生系统">Agent-native systems</small></span></a>
+    <nav aria-label="Primary navigation">
+      <a href="#research" data-en="Research" data-zh="研究">Research</a><a href="#sage">SAGE</a><a href="#systems" data-en="Systems" data-zh="系统">Systems</a><a href="#ecosystem" data-en="Ecosystem" data-zh="生态">Ecosystem</a><a class="nav-action" href="https://github.com/RIDE-Lab">GitHub ↗</a>
     </nav>
+    <button id="lang-toggle" class="lang-toggle" type="button" aria-label="切换到中文">中 / EN</button>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div><div class="hero-orbit orbit-one" aria-hidden="true"></div><div class="hero-orbit orbit-two" aria-hidden="true"></div>
+      <div class="hero-core" aria-hidden="true"><span>AGENT</span><i></i><i></i><i></i></div>
+      <div class="hero-copy">
+        <p class="signal"><span></span><span data-en="Research Initiative for Delegated Execution / 01" data-zh="委托执行研究计划 / 01">Research Initiative for Delegated Execution / 01</span></p>
+        <h1 id="hero-title">RIDE<span>Lab</span></h1>
+        <p class="hero-kicker" data-en="Build the systems agents actually need." data-zh="建设真正为智能体而生的系统。">Build the systems agents actually need.</p>
+        <p class="hero-summary" data-en="We rethink execution, state, context, evaluation, and operations for long-running agent workloads—not just isolated model calls." data-zh="我们为长时运行的智能体工作负载重新思考执行、状态、上下文、评测与运维，而不止于一次模型调用。">We rethink execution, state, context, evaluation, and operations for long-running agent workloads—not just isolated model calls.</p>
+        <div class="actions"><a class="button primary" href="#research"><span data-en="Explore the agenda" data-zh="查看研究议程">Explore the agenda</span><span>↓</span></a><a class="button quiet" href="https://sage.org.ai/"><span data-en="Open SAGE" data-zh="进入 SAGE">Open SAGE</span><span>↗</span></a></div>
+      </div>
+      <dl class="hero-metrics"><div><dt>04</dt><dd data-en="research axes" data-zh="研究主轴">research axes</dd></div><div><dt>01</dt><dd data-en="shared product" data-zh="共同产品">shared product</dd></div><div><dt>∞</dt><dd data-en="agent horizons" data-zh="智能体时域">agent horizons</dd></div></dl>
+    </section>
+
+    <nav class="scope-rail" aria-label="Homepage sections">
+      <a href="#research" data-code="01" data-en="Research agenda" data-zh="研究议程">Research agenda</a><a href="#sage" data-code="02" data-en="SAGE stewardship" data-zh="SAGE 工程治理">SAGE stewardship</a><a href="#systems" data-code="03" data-en="System portfolio" data-zh="系统课题">System portfolio</a><a href="#method" data-code="04" data-en="Research method" data-zh="研究方法">Research method</a><a href="#ecosystem" data-code="05" data-en="Ecosystem" data-zh="生态协作">Ecosystem</a>
+    </nav>
+
+    <section id="research" class="section">
+      <div class="section-head"><div><p class="eyebrow" data-en="Research agenda" data-zh="研究议程">Research agenda</p><h2 data-en="From model serving to agent execution." data-zh="从模型服务走向智能体执行。">From model serving to agent execution.</h2></div><p data-en="Inference engines optimize calls. Agent systems must also manage evolving context, durable state, multi-step control, evidence, and recovery across time." data-zh="推理引擎优化模型调用；智能体系统还必须跨越时间管理演化中的上下文、持久状态、多步控制、证据与恢复。">Inference engines optimize calls. Agent systems must also manage evolving context, durable state, multi-step control, evidence, and recovery across time.</p></div>
+      <div class="agenda-grid">
+        <article data-index="01"><b>EX</b><h3 data-en="Agent execution" data-zh="智能体执行">Agent execution</h3><p data-en="Dataflow, scheduling, coordination, backpressure, recovery, and continuous execution for multi-step agents." data-zh="面向多步智能体的数据流、调度、协同、背压、恢复与持续执行。">Dataflow, scheduling, coordination, backpressure, recovery, and continuous execution for multi-step agents.</p><small data-en="PROGRAMMING + RUNTIME" data-zh="编程 + 运行时">PROGRAMMING + RUNTIME</small></article>
+        <article data-index="02"><b>CX</b><h3 data-en="Context & state" data-zh="上下文与状态">Context &amp; state</h3><p data-en="Treat context as a living resource: selected, shared, streamed, versioned, and governed across workflows." data-zh="把上下文视为持续演化的资源：在工作流中选择、共享、流化、版本化并治理。">Treat context as a living resource: selected, shared, streamed, versioned, and governed across workflows.</p><small data-en="MEMORY + RETRIEVAL" data-zh="记忆 + 检索">MEMORY + RETRIEVAL</small></article>
+        <article data-index="03"><b>EV</b><h3 data-en="Evidence & evaluation" data-zh="证据与评测">Evidence &amp; evaluation</h3><p data-en="Measure behavior, provenance, quality, latency, cost, and safety under realistic repeated workloads." data-zh="在真实的重复工作负载下衡量行为、溯源、质量、时延、成本与安全。">Measure behavior, provenance, quality, latency, cost, and safety under realistic repeated workloads.</p><small data-en="BENCHMARK + OBSERVE" data-zh="基准 + 观测">BENCHMARK + OBSERVE</small></article>
+        <article data-index="04"><b>HX</b><h3 data-en="Human–agent systems" data-zh="人机智能体系统">Human–agent systems</h3><p data-en="Build controllable, inspectable services that remain useful through changing knowledge, roles, and goals." data-zh="构建可控、可检查的服务，使其在知识、角色与目标变化中仍然有效。">Build controllable, inspectable services that remain useful through changing knowledge, roles, and goals.</p><small data-en="INTERACTION + OPERATIONS" data-zh="交互 + 运维">INTERACTION + OPERATIONS</small></article>
+      </div>
+    </section>
+
+    <section id="sage" class="section sage-section">
+      <div class="sage-title"><p class="eyebrow" data-en="Shared flagship product" data-zh="共同旗舰产品">Shared flagship product</p><h2>SAGE</h2><p>Streaming-Augmented<br>Generative Execution</p></div>
+      <div class="sage-body">
+        <h3 data-en="Streaming-computing thinking for LLM inference and agent execution." data-zh="以流计算思维赋能大模型推理与智能体执行。">Streaming-computing thinking for LLM inference and agent execution.</h3>
+        <p data-en="SAGE is the shared product and technical vision of the IntelliStream ecosystem. RIDE Lab is the principal engineering steward of its core repositories—not its exclusive owner." data-zh="SAGE 是 IntelliStream 生态的共同产品与技术愿景。RIDE Lab 负责其核心仓库的主要工程治理，但并不排他拥有 SAGE。">SAGE is the shared product and technical vision of the IntelliStream ecosystem. RIDE Lab is the principal engineering steward of its core repositories—not its exclusive owner.</p>
+        <div class="pillars"><div><span>01</span><strong data-en="Explicit dataflow" data-zh="显式数据流">Explicit dataflow</strong><small data-en="Structure long-running work" data-zh="组织长时任务">Structure long-running work</small></div><div><span>02</span><strong data-en="Stateful execution" data-zh="有状态执行">Stateful execution</strong><small data-en="Evolve context over time" data-zh="让上下文持续演化">Evolve context over time</small></div><div><span>03</span><strong data-en="Open boundaries" data-zh="开放边界">Open boundaries</strong><small data-en="Connect data and inference systems" data-zh="连接数据与推理系统">Connect data and inference systems</small></div></div>
+        <div class="actions"><a class="button primary" href="https://sage.org.ai/"><span data-en="Explore SAGE" data-zh="探索 SAGE">Explore SAGE</span><span>↗</span></a><a class="text-link" href="https://github.com/RIDE-Lab/SAGE"><span data-en="Source & governance" data-zh="源码与治理">Source &amp; governance</span> ↗</a></div>
+      </div>
+    </section>
+
+    <section id="systems" class="section systems-section">
+      <div class="section-head"><div><p class="eyebrow" data-en="System portfolio" data-zh="系统课题">System portfolio</p><h2 data-en="Ideas become durable systems." data-zh="让研究思想成为持久系统。">Ideas become durable systems.</h2></div><p data-en="RIDE organizes caller-side agent systems and SAGE product surfaces. Inference internals stay in vLLM-HUST; generic data systems stay in DataSys." data-zh="RIDE 组织调用侧智能体系统与 SAGE 产品界面。推理内部机制属于 vLLM-HUST，通用数据系统属于 DataSys。">RIDE organizes caller-side agent systems and SAGE product surfaces. Inference internals stay in vLLM-HUST; generic data systems stay in DataSys.</p></div>
+      <div class="system-list">
+        <a href="https://github.com/RIDE-Lab/SAGE"><span>01 / CORE</span><strong>SAGE</strong><p data-en="Dataflow-native framework and shared execution core." data-zh="数据流原生框架与共同执行核心。">Dataflow-native framework and shared execution core.</p><em data-en="FRAMEWORK" data-zh="框架">FRAMEWORK</em><i>↗</i></a>
+        <a href="https://github.com/RIDE-Lab/sage-agentic"><span>02 / AGENT</span><strong>sage-agentic</strong><p data-en="Planning, tools, workflows, and coordination." data-zh="规划、工具、工作流与协同。">Planning, tools, workflows, and coordination.</p><em data-en="AGENT SYSTEM" data-zh="智能体系统">AGENT SYSTEM</em><i>↗</i></a>
+        <a href="https://github.com/RIDE-Lab/sage-rag"><span>03 / CONTEXT</span><strong>sage-rag</strong><p data-en="Composable retrieval and context pipelines." data-zh="可组合的检索与上下文流水线。">Composable retrieval and context pipelines.</p><em data-en="CONTEXT" data-zh="上下文">CONTEXT</em><i>↗</i></a>
+        <a href="https://github.com/RIDE-Lab/sage-eval"><span>04 / EVIDENCE</span><strong>sage-eval</strong><p data-en="Metrics, profilers, judges, and evaluation loops." data-zh="指标、剖析器、评审器与评测闭环。">Metrics, profilers, judges, and evaluation loops.</p><em data-en="EVALUATION" data-zh="评测">EVALUATION</em><i>↗</i></a>
+        <a href="https://github.com/RIDE-Lab/sage-studio"><span>05 / BUILD</span><strong>sage-studio</strong><p data-en="Visual workflow construction and experimentation." data-zh="可视化工作流构建与实验。">Visual workflow construction and experimentation.</p><em data-en="PRODUCT" data-zh="产品界面">PRODUCT</em><i>↗</i></a>
+        <a href="https://github.com/RIDE-Lab/sage-mate"><span>06 / APPLY</span><strong>Sage Mate</strong><p data-en="A cited faculty-twin application built with SAGE." data-zh="基于 SAGE 构建、提供引用依据的教师数字分身应用。">A cited faculty-twin application built with SAGE.</p><em data-en="APPLICATION" data-zh="应用">APPLICATION</em><i>↗</i></a>
+      </div>
+      <a class="directory-link" href="https://github.com/orgs/RIDE-Lab/repositories"><span data-en="View every RIDE Lab repository" data-zh="查看 RIDE Lab 全部仓库">View every RIDE Lab repository</span><span>↗</span></a>
+    </section>
+
+    <section id="method" class="section method-section">
+      <div class="section-head"><div><p class="eyebrow" data-en="Research method" data-zh="研究方法">Research method</p><h2 data-en="Question. System. Evidence. Transfer." data-zh="问题、系统、证据、转化。">Question. System. Evidence. Transfer.</h2></div><p data-en="A project is not finished at the prototype. We stabilize abstractions, publish evidence, and place mechanisms under the organization that can own them long term." data-zh="课题并不止于原型。我们稳定抽象、公开证据，并把机制放入能够长期负责它的组织。">A project is not finished at the prototype. We stabilize abstractions, publish evidence, and place mechanisms under the organization that can own them long term.</p></div>
+      <div class="method-path"><article><span>01 / FRAME</span><strong data-en="Research question" data-zh="研究问题">Research question</strong><p data-en="Name the workload and missing abstraction." data-zh="明确工作负载与缺失抽象。">Name the workload and missing abstraction.</p></article><article><span>02 / BUILD</span><strong data-en="Working system" data-zh="可运行系统">Working system</strong><p data-en="Implement against real interfaces." data-zh="面向真实接口完成实现。">Implement against real interfaces.</p></article><article><span>03 / PROVE</span><strong data-en="Public evidence" data-zh="公开证据">Public evidence</strong><p data-en="Measure quality and performance." data-zh="衡量质量与性能。">Measure quality and performance.</p></article><article><span>04 / STEWARD</span><strong data-en="Durable ownership" data-zh="长期治理">Durable ownership</strong><p data-en="Graduate to the correct technical home." data-zh="进入正确的长期技术归属。">Graduate to the correct technical home.</p></article></div>
+    </section>
+
+    <section id="ecosystem" class="section ecosystem-section">
+      <div class="section-head"><div><p class="eyebrow" data-en="Collaborative ecosystem" data-zh="协作生态">Collaborative ecosystem</p><h2 data-en="One product. Clear ownership." data-zh="一个共同产品，清晰技术归属。">One product. Clear ownership.</h2></div><p data-en="SAGE connects the ecosystem as a shared product. Each organization keeps a distinct research and implementation boundary." data-zh="SAGE 作为共同产品连接整个生态；每个组织保持清晰的研究与实现边界。">SAGE connects the ecosystem as a shared product. Each organization keeps a distinct research and implementation boundary.</p></div>
+      <div class="architecture"><a href="https://lab.sage.org.ai/"><span>00</span><strong>IntelliStream</strong><small data-en="Cross-layer research incubator" data-zh="跨层研究孵化器">Cross-layer research incubator</small></a><a class="active" href="#top"><span>01</span><strong>RIDE Lab</strong><small data-en="Agent systems and SAGE core stewardship" data-zh="智能体系统与 SAGE 核心治理">Agent systems and SAGE core stewardship</small></a><a href="https://datasys.sage.org.ai/"><span>02</span><strong>DataSys</strong><small data-en="Streams, graphs, vectors, indexes" data-zh="流、图、向量与索引">Streams, graphs, vectors, indexes</small></a><a href="https://vllm-hust.sage.org.ai/"><span>03</span><strong>vLLM-HUST</strong><small data-en="Runtime, scheduling, kernels, hardware" data-zh="运行时、调度、内核与硬件">Runtime, scheduling, kernels, hardware</small></a></div>
+      <div class="shared-line"><strong>SAGE</strong><i></i><p data-en="Streaming-Augmented Generative Execution · shared across the ecosystem" data-zh="流增强生成式执行 · 整个生态共同建设">Streaming-Augmented Generative Execution · shared across the ecosystem</p></div>
+    </section>
   </main>
+
+  <footer><div><strong>RIDE Lab</strong><span data-en="Research the infrastructure agents deserve." data-zh="研究智能体真正需要的基础设施。">Research the infrastructure agents deserve.</span></div><nav><a href="https://github.com/RIDE-Lab">GitHub</a><a href="https://sage.org.ai/">SAGE</a><a href="https://github.com/RIDE-Lab/.github/blob/main/profile/README.md" data-en="About" data-zh="关于">About</a></nav></footer>
+  <script src="./assets/site.js?v=ride-portal-20260817"></script>
 </body>
 </html>
