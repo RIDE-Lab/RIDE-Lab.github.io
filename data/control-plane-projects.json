@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "projects": [
+    {
+      "code": "SLO",
+      "name": "SLO-Aware Agent Serving",
+      "url": "https://github.com/intellistream/slo-aware-agent-serving",
+      "owner": "Liu Jun · iliujunn",
+      "summary_en": "Admission, calibrated prediction, fairness, and resource allocation for mixed agent workloads.",
+      "summary_zh": "面向混合智能体负载的准入、校准预测、公平性与资源分配。",
+      "status_en": "INCUBATING",
+      "status_zh": "孵化中"
+    },
+    {
+      "code": "KV",
+      "name": "Agentic KV",
+      "url": "https://github.com/intellistream/agentic-kv",
+      "owner": "Pei Fangrui · Apei-520",
+      "summary_en": "Dependency-aware future-reuse and recompute-cost prediction for agent state and KV decisions.",
+      "summary_zh": "面向智能体状态与 KV 决策的依赖感知未来复用和重算成本预测。",
+      "status_en": "INCUBATING",
+      "status_zh": "孵化中"
+    },
+    {
+      "code": "MODEL",
+      "name": "VAMOS",
+      "url": "https://github.com/RIDE-Lab/vamos",
+      "owner": "Multi-model control",
+      "summary_en": "VRAM-aware multi-model orchestration under serving SLOs.",
+      "summary_zh": "面向服务 SLO 的显存感知多模型编排。",
+      "status_en": "RESEARCH",
+      "status_zh": "研究中"
+    },
+    {
+      "code": "BUDGET",
+      "name": "Token-Budget Governor",
+      "url": "https://github.com/intellistream/vllm-token-budget-governor-plugin",
+      "owner": "Admission control",
+      "summary_en": "Token-budget admission and overload control before work enters the inference engine.",
+      "summary_zh": "在请求进入推理引擎前执行 token 预算准入与过载控制。",
+      "status_en": "INCUBATING",
+      "status_zh": "孵化中"
+    },
+    {
+      "code": "STATE",
+      "name": "Agent State Tiering",
+      "url": "https://github.com/intellistream/vllm-agent-state-tiering",
+      "owner": "Ou Dandan · oddod",
+      "summary_en": "Workflow-aware placement and prefetch across accelerator, host-memory, and storage tiers.",
+      "summary_zh": "跨加速器、主机内存与存储层的工作流感知放置和预取。",
+      "status_en": "INCUBATING",
+      "status_zh": "孵化中"
+    },
+    {
+      "code": "ROUTE",
+      "name": "Prefix Cache Routing Reliability",
+      "url": "https://github.com/intellistream/prefix-cache-routing-reliability",
+      "owner": "Wang Jie · WMASTER123",
+      "summary_en": "Failure-safe distributed prefix-cache routing, stale-view handling, and bounded recovery.",
+      "summary_zh": "故障安全的分布式前缀缓存路由、陈旧视图处理与有界恢复。",
+      "status_en": "INCUBATING",
+      "status_zh": "孵化中"
+    },
+    {
+      "code": "E&A",
+      "name": "MottoServe",
+      "url": "https://github.com/intellistream/llm-serving-motto-lab",
+      "owner": "Li Xuheng · sssarrior",
+      "summary_en": "A bounded evidence-and-analysis line. The historical planner is stopped; its negative result remains a research asset.",
+      "summary_zh": "有边界的证据与分析课题。历史 planner 已停止，其负面结果继续作为研究资产。",
+      "status_en": "STOPPED MECHANISM",
+      "status_zh": "机制已停止",
+      "tone": "negative"
+    }
+  ]
+}
