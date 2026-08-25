@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/site.css?v=control-plane-20260825">
+  <link rel="stylesheet" href="./assets/site.css">
 </head>
 <body data-title-en="RIDE Lab | Agent-Native LLM Inference Control Plane" data-title-zh="RIDE Lab｜智能体原生大模型推理控制平面">
   <header class="site-header">
@@ -67,14 +67,8 @@
 
     <section id="portfolio" class="section systems-section portfolio-section">
       <div class="section-head"><div><p class="eyebrow" data-en="Control-plane portfolio" data-zh="控制平面课题">Control-plane portfolio</p><h2 data-en="Independent questions. One control-plane contract." data-zh="独立问题，共用控制平面合同。">Independent questions. One control-plane contract.</h2></div><p data-en="These projects remain independent repositories with separate owners, branches, services, manifests, and results. RIDE provides the architectural family—not a merged storyline or a required GitHub namespace. Listed private repositories may require organization access until release." data-zh="这些课题保持独立仓库、负责人、分支、服务、manifest 与结果。RIDE 提供共同架构，而不是合并故事线或强制使用同一 GitHub 命名空间；列出的私有仓库在发布前可能需要组织权限。">These projects remain independent repositories with separate owners, branches, services, manifests, and results. RIDE provides the architectural family—not a merged storyline or a required GitHub namespace. Listed private repositories may require organization access until release.</p></div>
-      <div class="portfolio-grid">
-        <a class="project-card" href="https://github.com/intellistream/slo-aware-agent-serving"><span>01 / SLO</span><h3>SLO-Aware Agent Serving</h3><p data-en="Admission, calibrated prediction, fairness, and resource allocation for mixed agent workloads." data-zh="面向混合智能体负载的准入、校准预测、公平性与资源分配。">Admission, calibrated prediction, fairness, and resource allocation for mixed agent workloads.</p><footer><small>Liu Jun · iliujunn</small><em>INCUBATING ↗</em></footer></a>
-        <a class="project-card" href="https://github.com/intellistream/agentic-kv"><span>02 / KV</span><h3>Agentic KV</h3><p data-en="Dependency-aware future-reuse and recompute-cost prediction for agent state and KV decisions." data-zh="面向智能体状态与 KV 决策的依赖感知未来复用和重算成本预测。">Dependency-aware future-reuse and recompute-cost prediction for agent state and KV decisions.</p><footer><small>Pei Fangrui · Apei-520</small><em>INCUBATING ↗</em></footer></a>
-        <a class="project-card" href="https://github.com/RIDE-Lab/vamos"><span>03 / MODEL</span><h3>VAMOS</h3><p data-en="VRAM-aware multi-model orchestration under serving SLOs." data-zh="面向服务 SLO 的显存感知多模型编排。">VRAM-aware multi-model orchestration under serving SLOs.</p><footer><small>Multi-model control</small><em>RESEARCH ↗</em></footer></a>
-        <a class="project-card" href="https://github.com/intellistream/vllm-token-budget-governor-plugin"><span>04 / BUDGET</span><h3>Token-Budget Governor</h3><p data-en="Token-budget admission and overload control before work enters the inference engine." data-zh="在请求进入推理引擎前执行 token 预算准入与过载控制。">Token-budget admission and overload control before work enters the inference engine.</p><footer><small>Admission control</small><em>INCUBATING ↗</em></footer></a>
-        <a class="project-card" href="https://github.com/intellistream/vllm-agent-state-tiering"><span>05 / STATE</span><h3>Agent State Tiering</h3><p data-en="Workflow-aware placement and prefetch across accelerator, host-memory, and storage tiers." data-zh="跨加速器、主机内存与存储层的工作流感知放置和预取。">Workflow-aware placement and prefetch across accelerator, host-memory, and storage tiers.</p><footer><small>Ou Dandan · oddod</small><em>INCUBATING ↗</em></footer></a>
-        <a class="project-card" href="https://github.com/intellistream/prefix-cache-routing-reliability"><span>06 / ROUTE</span><h3>Prefix Cache Routing Reliability</h3><p data-en="Failure-safe distributed prefix-cache routing, stale-view handling, and bounded recovery." data-zh="故障安全的分布式前缀缓存路由、陈旧视图处理与有界恢复。">Failure-safe distributed prefix-cache routing, stale-view handling, and bounded recovery.</p><footer><small>Wang Jie · WMASTER123</small><em>INCUBATING ↗</em></footer></a>
-        <a class="project-card negative" href="https://github.com/intellistream/llm-serving-motto-lab"><span>07 / E&amp;A</span><h3>MottoServe</h3><p data-en="A bounded evidence-and-analysis line. The historical planner is stopped; its negative result remains a research asset." data-zh="有边界的证据与分析课题。历史 planner 已停止，其负面结果继续作为研究资产。">A bounded evidence-and-analysis line. The historical planner is stopped; its negative result remains a research asset.</p><footer><small>Li Xuheng · sssarrior</small><em>STOPPED MECHANISM ↗</em></footer></a>
+      <div class="portfolio-grid" data-project-portfolio data-source="./data/control-plane-projects.json">
+        <p class="project-status" data-project-status data-en="Loading the portfolio…" data-zh="正在加载课题组合……">Loading the portfolio…</p>
       </div>
     </section>
 
@@ -95,6 +89,7 @@
   </main>
 
   <footer><div><strong>RIDE Lab</strong><span data-en="Agent-native control above the engine." data-zh="在引擎之上构建智能体原生控制。">Agent-native control above the engine.</span></div><nav><a href="./members.html" data-en="People" data-zh="成员">People</a><a href="https://github.com/RIDE-Lab">GitHub</a><a href="https://github.com/RIDE-Lab/.github/blob/main/profile/README.md" data-en="About" data-zh="关于">About</a></nav></footer>
-  <script src="./assets/site.js?v=control-plane-20260825"></script>
+  <script src="./assets/site.js"></script>
+  <script src="./assets/portfolio.js"></script>
 </body>
 </html>
