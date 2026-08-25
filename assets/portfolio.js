@@ -8,9 +8,13 @@
   const render = (projects) => {
     container.replaceChildren();
     projects.forEach((project, index) => {
-      const card = document.createElement('a');
-      card.className = `project-card${project.tone === 'negative' ? ' negative' : ''}`;
-      card.href = project.url;
+      const card = document.createElement(project.url ? 'a' : 'article');
+      card.className = `project-card${project.url ? '' : ' unlinked'}`;
+      if (project.url) {
+        card.href = project.url;
+        card.target = '_blank';
+        card.rel = 'noopener noreferrer';
+      }
 
       const code = document.createElement('span');
       code.textContent = `${String(index + 1).padStart(2, '0')} / ${project.code}`;
@@ -26,8 +30,8 @@
       const owner = document.createElement('small');
       owner.textContent = project.owner;
       const state = document.createElement('em');
-      state.dataset.en = `${project.status_en} ↗`;
-      state.dataset.zh = `${project.status_zh} ↗`;
+      state.dataset.en = project.url ? `${project.status_en} ↗` : `${project.status_en} · LINK NOT PUBLIC`;
+      state.dataset.zh = project.url ? `${project.status_zh} ↗` : `${project.status_zh} · 链接未公开`;
       footer.append(owner, state);
 
       card.append(code, name, summary, footer);
