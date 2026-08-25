@@ -62,6 +62,16 @@
       "status_zh": "孵化中"
     },
     {
+      "code": "AGENT-KV",
+      "name": "FreshKV",
+      "url": "https://github.com/intellistream/FreshKV",
+      "owner": "Xincai Zhu · Pygone",
+      "summary_en": "Agent-lifecycle and future-reuse declarations drive bounded KV retention and eviction decisions, with execution delegated to an inference-engine plugin.",
+      "summary_zh": "利用智能体生命周期和未来复用声明进行有边界的 KV 保留与淘汰决策，并由推理引擎插件负责执行。",
+      "status_en": "INCUBATING",
+      "status_zh": "孵化中"
+    },
+    {
       "code": "E&A",
       "name": "MottoServe",
       "url": "https://github.com/intellistream/llm-serving-motto-lab",
