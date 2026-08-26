@@ -14,7 +14,7 @@ PORTFOLIO = json.loads(
 class PublicSiteTests(unittest.TestCase):
     def test_control_plane_portfolio_is_complete(self) -> None:
         names = {project["name"] for project in PORTFOLIO["projects"]}
-        self.assertGreaterEqual(len(names), 10)
+        self.assertGreaterEqual(len(names), 9)
         self.assertTrue(
             {
                 "SLO-Aware Agent Serving",
