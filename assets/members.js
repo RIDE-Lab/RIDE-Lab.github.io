@@ -88,3 +88,28 @@
   window.addEventListener('vllm-hust:langchange', render);
   new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
 })();
+
+(() => {
+  const list = document.querySelector('[data-research-leads]');
+  if (!list) return;
+
+  fetch(list.dataset.source)
+    .then((response) => {
+      if (!response.ok) throw new Error('Research portfolio unavailable');
+      return response.json();
+    })
+    .then(({ projects }) => {
+      const entries = projects.filter((project) => project.lead).map((project) => {
+        const entry = document.createElement('li');
+        const person = document.createElement('a');
+        person.href = `https://github.com/${encodeURIComponent(project.lead.github)}`;
+        person.textContent = project.lead.name;
+        const title = document.createElement('span');
+        title.textContent = project.name;
+        entry.append(person, title);
+        return entry;
+      });
+      if (entries.length) list.replaceChildren(...entries);
+    })
+    .catch((error) => console.error('[research leads]', error));
+})();

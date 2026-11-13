@@ -15,13 +15,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/site.css?v=public-portfolio-20260825">
+  <link rel="stylesheet" href="./assets/site.css?v=ride-project">
 </head>
 <body data-title-en="RIDE Lab | Agent-Native LLM Inference Control Plane" data-title-zh="RIDE Lab｜智能体原生大模型推理控制平面">
   <header class="site-header">
     <a class="brand" href="#top" aria-label="RIDE Lab home"><span class="brand-mark">R</span><span class="brand-copy">RIDE Lab<small data-en="Agent-native inference control" data-zh="智能体原生推理控制">Agent-native inference control</small></span></a>
     <nav aria-label="Primary navigation">
-      <a href="#boundary" data-en="Boundary" data-zh="边界">Boundary</a><a href="#decisions" data-en="Decisions" data-zh="决策">Decisions</a><a href="#portfolio" data-en="Portfolio" data-zh="课题">Portfolio</a><a href="#evidence" data-en="Evidence" data-zh="证据">Evidence</a><a href="./members.html" data-en="People" data-zh="成员">People</a><a class="nav-action" href="https://github.com/RIDE-Lab">GitHub ↗</a>
+      <a href="#boundary" data-en="Architecture" data-zh="系统架构">Architecture</a><a href="#portfolio" data-en="MODs" data-zh="MOD 目录">MODs</a><a href="#quickstart" data-en="Quickstart" data-zh="快速上手">Quickstart</a><a href="./members.html" data-en="Team" data-zh="团队">Team</a><a class="nav-action" href="https://github.com/RIDE-Lab">GitHub ↗</a>
     </nav>
     <button id="lang-toggle" class="lang-toggle" type="button" aria-label="切换到中文">中 / EN</button>
   </header>
@@ -33,63 +33,125 @@
       <div class="hero-copy">
         <p class="signal"><span></span><span data-en="Observe → decide → actuate → verify" data-zh="观测 → 决策 → 执行 → 验证">Observe → decide → actuate → verify</span></p>
         <h1 id="hero-title">RIDE<span>Control</span></h1>
-        <p class="hero-kicker" data-en="An open, agent-native control plane above LLM inference engines." data-zh="建设大模型推理引擎之上的开放、智能体原生控制平面。">An open, agent-native control plane above LLM inference engines.</p>
-        <p class="hero-summary" data-en="Agent workflows expose DAG state, tool waits, deadlines, quality bounds, reuse, and recovery intent. RIDE turns those signals and live telemetry into bounded fleet actions." data-zh="智能体工作流暴露 DAG 状态、工具等待、截止时间、质量边界、复用与恢复意图；RIDE 将这些信号和实时遥测转化为有边界的集群动作。">Agent workflows expose DAG state, tool waits, deadlines, quality bounds, reuse, and recovery intent. RIDE turns those signals and live telemetry into bounded fleet actions.</p>
-        <div class="actions"><a class="button primary" href="#boundary"><span data-en="See the system boundary" data-zh="查看系统边界">See the system boundary</span><span>↓</span></a><a class="button quiet" href="#portfolio"><span data-en="Explore the portfolio" data-zh="查看课题组合">Explore the portfolio</span><span>↘</span></a></div>
+        <p class="hero-kicker" data-en="An open control plane for LLM inference." data-zh="面向大模型推理的开放控制平面。">An open control plane for LLM inference.</p>
+        <p class="hero-summary" data-en="Decide which requests enter the engine, how many model replicas to run, and which inference state to keep. Deploy independent controllers and inspect their status and logs through one interface." data-zh="决定哪些请求可以进入引擎、何时调整模型副本、哪些推理状态值得保留。各控制器独立开发，通过同一套 RIDE 接口部署、查看状态和日志。">Decide which requests enter the engine, how many model replicas to run, and which inference state to keep. Deploy independent controllers and inspect their status and logs through one interface.</p>
+        <div class="actions"><a class="button primary" href="#quickstart"><span data-en="Get started" data-zh="快速上手">Get started</span><span>↓</span></a><a class="button quiet" href="#portfolio"><span data-en="Explore the MODs" data-zh="查看 MOD 目录">Explore the MODs</span><span>↘</span></a></div>
       </div>
-      <dl class="hero-metrics"><div><dt>04</dt><dd data-en="decision domains" data-zh="决策域">decision domains</dd></div><div><dt>07</dt><dd data-en="incubating research lines" data-zh="孵化研究线">incubating research lines</dd></div><div><dt>01</dt><dd data-en="evidence contract" data-zh="统一证据合同">evidence contract</dd></div></dl>
     </section>
 
     <nav class="scope-rail" aria-label="Homepage sections">
-      <a href="#boundary" data-code="01" data-en="System boundary" data-zh="系统边界">System boundary</a><a href="#decisions" data-code="02" data-en="Decision domains" data-zh="决策域">Decision domains</a><a href="#portfolio" data-code="03" data-en="Research portfolio" data-zh="研究课题">Research portfolio</a><a href="#evidence" data-code="04" data-en="Evidence contract" data-zh="证据合同">Evidence contract</a><a href="#ecosystem" data-code="05" data-en="Technical homes" data-zh="技术归属">Technical homes</a>
+      <a href="#boundary" data-en="Architecture" data-zh="系统架构">Architecture</a>
+      <a href="#portfolio" data-en="MOD catalog" data-zh="MOD 目录">MOD catalog</a>
+      <a href="#quickstart" data-en="Quickstart" data-zh="快速上手">Quickstart</a>
+      <a id="leadership" href="./members.html" data-en="Team" data-zh="团队">Team</a>
     </nav>
 
     <section id="boundary" class="section boundary-section">
       <div class="section-head"><div><p class="eyebrow" data-en="System boundary" data-zh="系统边界">System boundary</p><h2 data-en="Engines execute. The control plane decides." data-zh="引擎负责执行，控制平面负责决策。">Engines execute. The control plane decides.</h2></div><p data-en="RIDE is not another inference engine. It is the policy, coordination, and evidence layer that turns workload intent and live telemetry into bounded actions on an engine fleet." data-zh="RIDE 不是另一个推理引擎，而是把工作负载意图和实时遥测转化为有边界执行动作的策略、协调与证据层。">RIDE is not another inference engine. It is the policy, coordination, and evidence layer that turns workload intent and live telemetry into bounded actions on an engine fleet.</p></div>
-      <div class="control-stack" role="img" aria-label="Applications and workflows feed the RIDE control plane, which actuates inference engines and infrastructure">
-        <article class="stack-layer workload"><span>03 / INTENT</span><strong data-en="Agents, workflows, users" data-zh="智能体、工作流与用户">Agents, workflows, users</strong><p data-en="DAG state, deadlines, quality targets, budgets, reuse signals, and service policy." data-zh="DAG 状态、截止时间、质量目标、预算、复用信号与服务策略。">DAG state, deadlines, quality targets, budgets, reuse signals, and service policy.</p></article>
-        <article class="stack-layer control"><span>02 / RIDE</span><strong data-en="Inference control plane" data-zh="推理控制平面">Inference control plane</strong><p data-en="Observe, predict, route, admit, place, budget, recover, and verify." data-zh="观测、预测、路由、准入、放置、预算、恢复与验证。">Observe, predict, route, admit, place, budget, recover, and verify.</p></article>
+      <div class="control-stack">
+        <article class="stack-layer workload"><span>03 / INTENT</span><strong data-en="Agents, workflows, users" data-zh="智能体、工作流与用户">Agents, workflows, users</strong><p data-en="Applications submit inference requests. Controllers can also use workflow signals such as tool waits or service deadlines when available." data-zh="应用提交推理请求；接入工作流信息后，Controller 还可利用工具等待、服务截止时间等信号。">Applications submit inference requests. Controllers can also use workflow signals such as tool waits or service deadlines when available.</p></article>
+        <article class="stack-layer control"><span>02 / RIDE</span><strong data-en="Inference control plane" data-zh="推理控制平面">Inference control plane</strong><p data-en="Independent MODs choose actions. The shared RIDE SDK and runtime manage their lifecycle, status, and logs. The Ray executor runs components as Ray Jobs on an existing cluster." data-zh="独立 MOD 做策略决策。RIDE SDK 和运行时统一管理启动、停止、状态和日志。选择 Ray 执行方式时，组件作为 Ray Job 运行在已有集群上。">Independent MODs choose actions. The shared RIDE SDK and runtime manage their lifecycle, status, and logs. The Ray executor runs components as Ray Jobs on an existing cluster.</p></article>
         <article class="stack-layer engine"><span>01 / EXECUTE</span><strong data-en="LLM inference engines" data-zh="大模型推理引擎">LLM inference engines</strong><p data-en="vLLM-HUST, vLLM, SGLang, and compatible serving backends execute prefill, decode, cache, and communication paths." data-zh="vLLM-HUST、vLLM、SGLang 及兼容后端执行 prefill、decode、缓存与通信路径。">vLLM-HUST, vLLM, SGLang, and compatible serving backends execute prefill, decode, cache, and communication paths.</p></article>
         <article class="stack-layer hardware"><span>00 / RESOURCE</span><strong data-en="Accelerators, memory, network" data-zh="加速器、内存与网络">Accelerators, memory, network</strong><p data-en="The data plane remains independently measurable and replaceable." data-zh="数据面保持可独立测量、可替换。">The data plane remains independently measurable and replaceable.</p></article>
       </div>
-      <div class="boundary-note"><strong data-en="Boundary rule" data-zh="边界规则">Boundary rule</strong><p data-en="A RIDE mechanism must be expressible as a decision over observable state. Engine patches are allowed only as minimal reusable telemetry or actuation seams; kernels, KV transport, compilation internals, and hardware backends do not become control-plane work merely because they expose a flag." data-zh="RIDE 机制必须能表述为基于可观测状态的决策。引擎补丁只能是最小、可复用的遥测或执行接口；内核、KV 传输、编译内部和硬件后端不会因为暴露了一个开关就变成控制平面课题。">A RIDE mechanism must be expressible as a decision over observable state. Engine patches are allowed only as minimal reusable telemetry or actuation seams; kernels, KV transport, compilation internals, and hardware backends do not become control-plane work merely because they expose a flag.</p></div>
-    </section>
-
-    <section id="decisions" class="section decision-section">
-      <div class="section-head"><div><p class="eyebrow" data-en="Decision domains" data-zh="决策域">Decision domains</p><h2 data-en="Control is a closed loop, not a dashboard." data-zh="控制平面是闭环，不是仪表盘。">Control is a closed loop, not a dashboard.</h2></div><p data-en="Each research line turns measurable state into a clear decision and a verifiable outcome." data-zh="每条研究线都把可测状态转化为明确决策与可验证结果。">Each research line turns measurable state into a clear decision and a verifiable outcome.</p></div>
-      <div class="agenda-grid decision-grid">
+      <div id="evidence" class="overview-detail">
+        <h3 data-en="How controllers work" data-zh="Controller 如何运行">How controllers work</h3>
+        <div class="method-path"><article><span>01 / OBSERVE</span><strong data-en="Build live context" data-zh="构建实时上下文">Build live context</strong><p data-en="Workload, topology, engine, model, queue, and resource signals." data-zh="汇聚工作负载、拓扑、引擎、模型、队列与资源信号。">Workload, topology, engine, model, queue, and resource signals.</p></article><article><span>02 / DECIDE</span><strong data-en="Choose an action" data-zh="选择控制动作">Choose an action</strong><p data-en="Admission, routing, placement, budgets, state, quality, and recovery." data-zh="覆盖准入、路由、放置、预算、状态、质量与恢复。">Admission, routing, placement, budgets, state, quality, and recovery.</p></article><article><span>03 / ACTUATE</span><strong data-en="Use engine connectors" data-zh="通过引擎连接器执行">Use engine connectors</strong><p data-en="Apply decisions through versioned telemetry and control interfaces." data-zh="通过版本化遥测与控制接口落实决策。">Apply decisions through versioned telemetry and control interfaces.</p></article><article><span>04 / REPORT</span><strong data-en="Report outcomes" data-zh="报告执行结果">Report outcomes</strong><p data-en="Correctness, latency, goodput, resource use, and fallback status." data-zh="报告正确性、时延、有效吞吐、资源使用与回退状态。">Correctness, latency, goodput, resource use, and fallback status.</p></article></div>
+      </div>
+      <details id="decisions" class="overview-detail">
+        <summary data-en="Research decision areas" data-zh="查看控制面研究方向">Research decision areas</summary>
+        <div class="agenda-grid decision-grid">
         <article data-index="01"><b>WF</b><h3 data-en="Workflow & SLO" data-zh="工作流与 SLO">Workflow &amp; SLO</h3><p data-en="Schedule DAG stages, admit work, allocate capacity, and protect fairness along the critical path." data-zh="围绕关键路径调度 DAG 阶段、准入请求、分配容量并保护公平性。">Schedule DAG stages, admit work, allocate capacity, and protect fairness along the critical path.</p><small>ADMISSION · DEADLINE · FAIRNESS</small></article>
         <article data-index="02"><b>RP</b><h3 data-en="Routing & placement" data-zh="路由与放置">Routing &amp; placement</h3><p data-en="Choose a backend, cache holder, model replica, adapter, or continuation target from live fleet state." data-zh="依据实时集群状态选择后端、缓存持有者、模型副本、适配器或续算目标。">Choose a backend, cache holder, model replica, adapter, or continuation target from live fleet state.</p><small>SELECT · PLACE · RECOVER</small></article>
         <article data-index="03"><b>KV</b><h3 data-en="State & KV" data-zh="状态与 KV">State &amp; KV</h3><p data-en="Predict reuse, materialize or recompute state, select tiers, and account for transfer and survival horizons." data-zh="预测复用，选择状态物化或重算、分层位置，并计入传输与剩余生存时间。">Predict reuse, materialize or recompute state, select tiers, and account for transfer and survival horizons.</p><small>REUSE · MATERIALIZE · TIER</small></article>
         <article data-index="04"><b>QE</b><h3 data-en="Quality & economics" data-zh="质量与经济性">Quality &amp; economics</h3><p data-en="Trade quality, latency, cost, safety, and service risk without hiding failures behind aggregate throughput." data-zh="在质量、时延、成本、安全和服务风险之间决策，不用汇总吞吐掩盖失败。">Trade quality, latency, cost, safety, and service risk without hiding failures behind aggregate throughput.</p><small>QUALITY · COST · GUARDRAIL</small></article>
       </div>
+      </details>
     </section>
 
     <section id="portfolio" class="section systems-section portfolio-section">
-      <div class="section-head"><div><p class="eyebrow" data-en="Control-plane portfolio" data-zh="控制平面课题">Control-plane portfolio</p><h2 data-en="Independent questions. One control-plane architecture." data-zh="独立课题，共用控制平面架构。">Independent questions. One control-plane architecture.</h2></div><p data-en="Each project retains its own owner, implementation, service, manifest, and results. RIDE provides the shared architectural family; repository links appear only after they are public." data-zh="每个课题保留独立负责人、实现、服务、manifest 与结果。RIDE 提供共同架构；仓库公开后才展示链接。">Each project retains its own owner, implementation, service, manifest, and results. RIDE provides the shared architectural family; repository links appear only after they are public.</p></div>
-      <div class="portfolio-grid" data-project-portfolio data-source="./data/control-plane-projects.json?v=public-portfolio-20260825">
+      <div class="section-head">
+        <div><p class="eyebrow" data-en="RIDE MOD catalog" data-zh="RIDE MOD 目录">RIDE MOD catalog</p><h2 data-en="Controllers for inference serving" data-zh="推理服务的三个控制器">Controllers for inference serving</h2></div>
+        <p data-en="A MOD packages a control policy as a component. RIDE gives each component the same management interface so its policy can evolve independently." data-zh="MOD 是可独立演进的策略组件。每个 Controller 决定自己负责的动作，由 RIDE 提供统一的部署、状态与日志入口。">A MOD packages a control policy as a component. RIDE gives each component the same management interface so its policy can evolve independently.</p>
+      </div>
+      <div class="mod-grid">
+        <article class="mod-card mod-graduated" id="request-throttling">
+          <span class="mod-status" data-en="Graduated" data-zh="已孵化">Graduated</span>
+          <h3>Request Throttling Controller</h3>
+          <p data-en="Decides which agent requests to admit and which to queue. For multi-turn workloads with tool waits, it limits contention for capacity and gives active workflows a chance to reuse their inference state." data-zh="决定哪些 Agent 请求可以进入引擎、哪些先排队。在存在工具等待的多轮负载中，它限制同时争用容量的工作流，让活跃工作流有机会复用推理状态。">Decides which agent requests to admit and which to queue. For multi-turn workloads with tool waits, it limits contention for capacity and gives active workflows a chance to reuse their inference state.</p>
+          <div class="mod-evidence">
+            <strong>23.45%</strong>
+            <p data-en="Lower batch completion time in one matched multi-turn replay (353.74 s → 270.80 s). The engine configuration was held fixed across the two runs. This result covers one replay; task accuracy and repeatability remain unverified." data-zh="一次匹配的多轮回放中，整批耗时从 353.74 秒降至 270.80 秒。两组使用相同引擎配置。该结果来自单次回放，任务正确率和可重复性仍待验证。">Lower batch completion time in one matched multi-turn replay (353.74 s → 270.80 s). The engine configuration was held fixed across the two runs. This result covers one replay; task accuracy and repeatability remain unverified.</p>
+          </div>
+          <div class="mod-links">
+            <a href="#quickstart" data-en="Try the public demo ↓" data-zh="试用公开示例 ↓">Try the public demo ↓</a>
+            <a href="https://github.com/vLLM-HUST/vllm-hust-benchmark/tree/main/reports/controller-b1-discovery-20261104" data-en="Benchmark and methodology ↗" data-zh="基准与测量方法 ↗">Benchmark and methodology ↗</a>
+          </div>
+        </article>
+        <article class="mod-card">
+          <span class="mod-status" data-en="Incubating" data-zh="孵化中">Incubating</span>
+          <h3>Instance Controller</h3>
+          <p data-en="Studies when to add or remove inference replicas using live load and replica readiness. Evaluation compares latency and service capacity against fixed replicas under a comparable accelerator budget." data-zh="研究如何根据实时负载与副本就绪状态决定何时扩缩、扩缩多少。验收关注相近加速卡预算下的时延与服务能力，并与固定副本对照。">Studies when to add or remove inference replicas using live load and replica readiness. Evaluation compares latency and service capacity against fixed replicas under a comparable accelerator budget.</p>
+        </article>
+        <article class="mod-card">
+          <span class="mod-status" data-en="Incubating" data-zh="孵化中">Incubating</span>
+          <h3>KV Controller</h3>
+          <p data-en="Studies which inference state to retain, move, or recompute. Policies use reuse and memory pressure signals, while the engine or KV backend carries out the requested operations." data-zh="研究哪些推理状态应保留、迁移或重算。策略使用复用与内存压力信号，具体状态操作由推理引擎或 KV 后端执行。">Studies which inference state to retain, move, or recompute. Policies use reuse and memory pressure signals, while the engine or KV backend carries out the requested operations.</p>
+        </article>
+      </div>
+      <div class="research-heading" id="research">
+        <h3 data-en="Research portfolio" data-zh="研究课题">Research portfolio</h3>
+        <p data-en="RIDE Lab also hosts independent research projects, each with its own owner and results." data-zh="RIDE Lab 也孵化独立研究课题，各课题由对应负责人维护和验证。">RIDE Lab also hosts independent research projects, each with its own owner and results.</p>
+      </div>
+      <div class="portfolio-grid" data-project-portfolio data-source="./data/control-plane-projects.json?v=ride-project">
         <p class="project-status" data-project-status data-en="Loading the portfolio…" data-zh="正在加载课题组合……">Loading the portfolio…</p>
       </div>
     </section>
 
-    <section id="evidence" class="section method-section">
-      <div class="section-head"><div><p class="eyebrow" data-en="Decision lifecycle" data-zh="决策生命周期">Decision lifecycle</p><h2 data-en="From workload intent to accountable execution." data-zh="从工作负载意图到可追踪执行。">From workload intent to accountable execution.</h2></div><p data-en="RIDE connects observable workflow and system state to engine actions, then records outcomes for operations and evaluation." data-zh="RIDE 把可观测的工作流与系统状态连接到引擎动作，并记录结果以支持运维与评估。">RIDE connects observable workflow and system state to engine actions, then records outcomes for operations and evaluation.</p></div>
-      <div class="method-path"><article><span>01 / OBSERVE</span><strong data-en="Build live context" data-zh="构建实时上下文">Build live context</strong><p data-en="Workload, topology, engine, model, queue, and resource signals." data-zh="汇聚工作负载、拓扑、引擎、模型、队列与资源信号。">Workload, topology, engine, model, queue, and resource signals.</p></article><article><span>02 / DECIDE</span><strong data-en="Choose an action" data-zh="选择控制动作">Choose an action</strong><p data-en="Admission, routing, placement, budgets, state, quality, and recovery." data-zh="覆盖准入、路由、放置、预算、状态、质量与恢复。">Admission, routing, placement, budgets, state, quality, and recovery.</p></article><article><span>03 / ACTUATE</span><strong data-en="Use engine connectors" data-zh="通过引擎连接器执行">Use engine connectors</strong><p data-en="Apply decisions through versioned telemetry and control interfaces." data-zh="通过版本化遥测与控制接口落实决策。">Apply decisions through versioned telemetry and control interfaces.</p></article><article><span>04 / REPORT</span><strong data-en="Report outcomes" data-zh="报告执行结果">Report outcomes</strong><p data-en="Correctness, latency, goodput, resource use, and fallback status." data-zh="报告正确性、时延、有效吞吐、资源使用与回退状态。">Correctness, latency, goodput, resource use, and fallback status.</p></article></div>
-    </section>
-
-    <section id="leadership" class="section leadership-section">
-      <div class="leadership-card"><div><p class="eyebrow" data-en="Program leadership" data-zh="方向负责人">Program leadership</p><h2 data-en="Built as a coherent systems program." data-zh="以一致的系统研究计划推进。">Built as a coherent systems program.</h2></div><div><strong>Mao Yancan · <a href="https://github.com/yancanmao">yancanmao ↗</a></strong><p data-en="RIDE-Lab operations and Inference Control Plane program lead. Project-level academic ownership remains with each named owner." data-zh="RIDE-Lab 运营与推理控制平面方向负责人。各课题的学术责任仍由对应负责人独立承担。">RIDE-Lab operations and Inference Control Plane program lead. Project-level academic ownership remains with each named owner.</p><small data-en="Program coordination connects independent projects without replacing project-level accountability." data-zh="方向协调连接各独立课题，但不替代课题级责任。">Program coordination connects independent projects without replacing project-level accountability.</small></div></div>
+    <section id="quickstart" class="section quickstart-section">
+      <div class="section-head">
+        <div><p class="eyebrow" data-en="Quickstart" data-zh="快速上手">Quickstart</p><h2 data-en="Put a controller in front of a model" data-zh="把 Controller 接到一个模型服务前面">Put a controller in front of a model</h2></div>
+        <p data-en="Start with an existing Ray cluster and a reachable model endpoint. This public demo is a standalone MOD that limits concurrent non-streaming requests. The graduated Request Throttling Controller above uses a different policy." data-zh="准备一个可访问的 Ray 集群和模型服务地址。下面的公开示例是一个独立 MOD，用于限制非流式请求的并发数。上方已孵化的 Request Throttling Controller 使用另一套策略。">Start with an existing Ray cluster and a reachable model endpoint. This public demo is a standalone MOD that limits concurrent non-streaming requests. The graduated Request Throttling Controller above uses a different policy.</p>
+      </div>
+      <div class="quickstart-grid">
+        <article>
+          <h3 data-en="1. Install RIDE and connect to Ray" data-zh="1. 安装 RIDE 并连接 Ray">1. Install RIDE and connect to Ray</h3>
+          <p data-en="Run on your management host. Replace the example Ray Dashboard address with your cluster’s address. Install the demo on the management host. Eligible Ray workers also need the package, either preinstalled or supplied through Ray runtime_env. Leave the management process running." data-zh="在管理机器运行。把示例 Ray Dashboard 地址换成你的集群地址。先在管理机器安装示例 MOD。可执行作业的 Ray 节点也需要这个包，可以预装或通过 Ray runtime_env 提供。保持管理进程运行。">Run on your management host. Replace the example Ray Dashboard address with your cluster’s address. Install the demo on the management host. Eligible Ray workers also need the package, either preinstalled or supplied through Ray runtime_env. Leave the management process running.</p>
+          <pre><code>git clone https://github.com/vLLM-HUST/ride.git
+cd ride
+python -m pip install '.[ray]'
+python -m pip install 'git+https://github.com/vLLM-HUST/ride-controller-demo.git'
+ride start --ray-address http://ray-head:8265</code></pre>
+        </article>
+        <article>
+          <h3 data-en="2. Start the MOD and inspect it" data-zh="2. 启动 MOD 并查看运行状态">2. Start the MOD and inspect it</h3>
+          <p data-en="Open another terminal on the same management host. Set the backend to your model endpoint. The controller endpoint must point to the Ray node that will run it. On multi-node clusters, use a Ray resource constraint to select that node." data-zh="在同一管理机器另开一个终端。backend 填实际模型地址，endpoint 指向运行 Controller 的 Ray 节点。多节点集群可通过 Ray 资源约束指定该节点。">Open another terminal on the same management host. Set the backend to your model endpoint. The controller endpoint must point to the Ray node that will run it. On multi-node clusters, use a Ray resource constraint to select that node.</p>
+          <pre><code>ride start controller demo --name demo-main \
+  --backend http://model-host:8000 \
+  --endpoint http://controller-host:9000 --port 9000 --executor ray
+ride describe controller demo-main
+ride logs controller demo-main</code></pre>
+        </article>
+      </div>
+      <p class="quickstart-use" data-en="Send non-streaming POST requests to /v1/chat/completions at the controller endpoint. Use RIDE for component status and logs, and the Ray Dashboard to inspect the underlying Job. Use ride stop controller demo-main to stop the demo. The model keeps running." data-zh="向 Controller 地址的 /v1/chat/completions 发送非流式 POST 请求。在 RIDE 查组件状态和日志，在 Ray Dashboard 查底层 Job。用 ride stop controller demo-main 停止示例，模型服务继续运行。">Send non-streaming POST requests to /v1/chat/completions at the controller endpoint. Use RIDE for component status and logs, and the Ray Dashboard to inspect the underlying Job. Use ride stop controller demo-main to stop the demo. The model keeps running.</p>
+      <pre class="quickstart-request"><code>curl -fsS http://controller-host:9000/v1/chat/completions \
+  -H 'Content-Type: application/json' \
+  -d '{"model":"your-served-model","messages":[{"role":"user","content":"Hello"}],"stream":false}'</code></pre>
+      <div class="mod-links">
+        <a href="https://github.com/vLLM-HUST/ride-controller-demo" data-en="Demo source ↗" data-zh="示例源码 ↗">Demo source ↗</a>
+        <a href="https://github.com/vLLM-HUST/ride/blob/main/docs/guides/INSTALL_AND_DEPLOY.md" data-en="Deployment guide ↗" data-zh="部署指南 ↗">Deployment guide ↗</a>
+        <a href="https://github.com/vLLM-HUST/ride/blob/main/docs/guides/CONTROLLER_DEVELOPMENT.md" data-en="Build your own MOD ↗" data-zh="开发自己的 MOD ↗">Build your own MOD ↗</a>
+      </div>
     </section>
 
     <section id="ecosystem" class="section ecosystem-section">
       <div class="section-head"><div><p class="eyebrow" data-en="Technical homes" data-zh="技术归属">Technical homes</p><h2 data-en="One stack. Explicit ownership." data-zh="同一技术栈，明确技术归属。">One stack. Explicit ownership.</h2></div><p data-en="RIDE provides the control-plane architecture while each project retains the repository and organization that best match its technical ownership." data-zh="RIDE 提供控制面架构；各课题保留最符合其技术归属的仓库与组织。">RIDE provides the control-plane architecture while each project retains the repository and organization that best match its technical ownership.</p></div>
       <div class="architecture"><a href="https://lab.sage.org.ai/"><span>00</span><strong>IntelliStream</strong><small data-en="Cross-layer research incubator" data-zh="跨层研究孵化器">Cross-layer research incubator</small></a><a class="active" href="#top"><span>01</span><strong>RIDE Lab</strong><small data-en="Inference control plane" data-zh="推理控制平面">Inference control plane</small></a><a href="https://sage.org.ai/"><span>02</span><strong>SAGE</strong><small data-en="Programmable agent and workflow surface" data-zh="可编程智能体与工作流界面">Programmable agent and workflow surface</small></a><a href="https://vllm-hust.sage.org.ai/"><span>03</span><strong>vLLM-HUST</strong><small data-en="Inference engine and hardware execution" data-zh="推理引擎与硬件执行">Inference engine and hardware execution</small></a></div>
-      <div class="shared-line"><strong>CONTROL LOOP</strong><i></i><p data-en="intent → telemetry → decision → engine action → evidence" data-zh="意图 → 遥测 → 决策 → 引擎动作 → 证据">intent → telemetry → decision → engine action → evidence</p></div>
     </section>
   </main>
 
-  <footer><div><strong>RIDE Lab</strong><span data-en="Agent-native control above the engine." data-zh="在引擎之上构建智能体原生控制。">Agent-native control above the engine.</span></div><nav><a href="./members.html" data-en="People" data-zh="成员">People</a><a href="https://github.com/RIDE-Lab">GitHub</a><a href="https://github.com/RIDE-Lab/.github/blob/main/profile/README.md" data-en="About" data-zh="关于">About</a></nav></footer>
+  <footer><div><strong>RIDE Lab</strong><span data-en="Agent-native control above the engine." data-zh="在引擎之上构建智能体原生控制。">Agent-native control above the engine.</span></div><nav><a href="./members.html" data-en="Team" data-zh="团队">Team</a><a href="https://github.com/RIDE-Lab">GitHub</a><a href="https://github.com/RIDE-Lab/.github/blob/main/profile/README.md" data-en="About" data-zh="关于">About</a></nav></footer>
   <script src="./assets/site.js?v=public-portfolio-20260825"></script>
-  <script src="./assets/portfolio.js?v=public-portfolio-20260825"></script>
+  <script src="./assets/portfolio.js?v=ride-project"></script>
 </body>
 </html>

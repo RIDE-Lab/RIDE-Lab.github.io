@@ -28,10 +28,10 @@
 
       const footer = document.createElement('footer');
       const owner = document.createElement('small');
-      owner.textContent = project.owner;
+      owner.textContent = project.lead ? `${project.lead.name} · ${project.lead.github}` : project.owner;
       const state = document.createElement('em');
-      state.dataset.en = project.url ? `${project.status_en} ↗` : `${project.status_en} · LINK NOT PUBLIC`;
-      state.dataset.zh = project.url ? `${project.status_zh} ↗` : `${project.status_zh} · 链接未公开`;
+      state.dataset.en = project.url ? `${project.status_en} ↗` : project.status_en;
+      state.dataset.zh = project.url ? `${project.status_zh} ↗` : project.status_zh;
       footer.append(owner, state);
 
       card.append(code, name, summary, footer);
